@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swag — Rooney Pitchford</title>
+  <meta name="description" content="Rooney Pitchford merch.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/celestial.css">
+</head>
+<body>
+
+  <div class="bg"></div>
+
+  <div class="wrap">
+
+    <nav class="site-nav">
+      <a class="nav-name" href="/">Rooney <em>Pitchford</em></a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/discography.html">Discography</a>
+        <a href="/press.html">Press &amp; Videos</a>
+        <a href="/swag.html" class="active">Swag</a>
+        <a href="/blog.html">Blog</a>
+      </div>
+    </nav>
+
+    <div class="page-hero">
+      <div class="kicker">Austin, Texas &middot; Singer&#8211;songwriter</div>
+      <h1>Swag</h1>
+    </div>
+
+    <div class="panel">
+
+      <div class="section-label">
+        <span>Merch</span>
+      </div>
+
+      <div class="merch-grid">
+        <a class="merch-card" href="https://rooneypitchford.bandcamp.com/merch" target="_blank" rel="noopener">
+          <div class="merch-title">Shop on Bandcamp</div>
+          <div class="merch-meta">Music &amp; merch</div>
+        </a>
+      </div>
+
+      <p class="empty-state">More coming soon.</p>
+
+      <footer class="site-footer">
+        <span>Rooney Pitchford</span>
+        <span>
+          <a href="https://rooneypitchford.bandcamp.com" target="_blank" rel="noopener">Bandcamp</a>
+          &nbsp;&middot;&nbsp;
+          <a href="https://open.spotify.com/artist/2NCiQjdyLB4EkP43BmTsO0" target="_blank" rel="noopener">Spotify</a>
+          &nbsp;&middot;&nbsp;
+          <a href="https://music.apple.com/us/artist/rooney-pitchford/1073485638" target="_blank" rel="noopener">Apple Music</a>
+        </span>
+      </footer>
+
+    </div><!-- /panel -->
+
+  </div><!-- /wrap -->
+
+  <script>
+    function toggleEmbed(el) {
+      const panel = el.querySelector('.embed-panel');
+      if (!panel) return;
+      const isOpen = panel.classList.contains('open');
+      document.querySelectorAll('.embed-panel.open').forEach(p => p.classList.remove('open'));
+      if (!isOpen) panel.classList.add('open');
+    }
+  </script>
+
+</body>
+</html>

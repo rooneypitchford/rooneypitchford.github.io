@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Press & Videos — Rooney Pitchford</title>
+  <meta name="description" content="Press coverage and live session videos from Rooney Pitchford.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/celestial.css">
+</head>
+<body>
+
+  <div class="bg"></div>
+
+  <div class="wrap">
+
+    <nav class="site-nav">
+      <a class="nav-name" href="/">Rooney <em>Pitchford</em></a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/discography.html">Discography</a>
+        <a href="/press.html" class="active">Press &amp; Videos</a>
+        <a href="/swag.html">Swag</a>
+        <a href="/blog.html">Blog</a>
+      </div>
+    </nav>
+
+    <div class="page-hero">
+      <div class="kicker">Austin, Texas &middot; Singer&#8211;songwriter</div>
+      <h1>Press &amp; <em>Videos</em></h1>
+    </div>
+
+    <div class="panel">
+
+      <div class="press-quote" style="margin-top: 44px;">
+        <p class="quote-text">&ldquo;A masterpiece of production and songwriting, containing some truly astounding lyricism&hellip; flows elegantly without ever getting old.&rdquo;</p>
+        <a class="quote-source" href="https://stanforddaily.com/2017/01/30/getting-to-know-rooney-pitchford/" target="_blank" rel="noopener">The Stanford Daily &middot; 2017</a>
+      </div>
+
+      <div class="section-label">
+        <span>Videos</span>
+        <span class="count">03 sessions</span>
+      </div>
+
+      <div class="videos">
+        <div class="video-card" onclick="toggleEmbed(this)">
+          <div class="video-title">South Side of Austin</div>
+          <div class="video-meta">Live &middot; Sofar San Francisco</div>
+          <a class="video-watch" href="https://www.youtube.com/watch?v=RDOBH1H0PcI" target="_blank" rel="noopener" onclick="event.stopPropagation()">Watch &#8594;</a>
+          <div class="embed-panel">
+            <iframe src="https://www.youtube-nocookie.com/embed/RDOBH1H0PcI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="video-card" onclick="toggleEmbed(this)">
+          <div class="video-title">New Orleans Song</div>
+          <div class="video-meta">Live &middot; Possum Trot Studios</div>
+          <a class="video-watch" href="https://www.youtube.com/watch?v=R8AfjrxamMs" target="_blank" rel="noopener" onclick="event.stopPropagation()">Watch &#8594;</a>
+          <div class="embed-panel">
+            <iframe src="https://www.youtube-nocookie.com/embed/R8AfjrxamMs" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="video-card" onclick="toggleEmbed(this)">
+          <div class="video-title">Pancho and Lefty</div>
+          <div class="video-meta">Townes Van Zandt Cover</div>
+          <a class="video-watch" href="https://www.youtube.com/watch?v=JyEKzi8QnVI" target="_blank" rel="noopener" onclick="event.stopPropagation()">Watch &#8594;</a>
+          <div class="embed-panel">
+            <iframe src="https://www.youtube-nocookie.com/embed/JyEKzi8QnVI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+      <p class="footnote">Full session catalog on <a href="https://www.youtube.com/@rooneypitchford5078" target="_blank" rel="noopener">YouTube</a>.</p>
+
+      <footer class="site-footer">
+        <span>Rooney Pitchford</span>
+        <span>
+          <a href="https://rooneypitchford.bandcamp.com" target="_blank" rel="noopener">Bandcamp</a>
+          &nbsp;&middot;&nbsp;
+          <a href="https://open.spotify.com/artist/2NCiQjdyLB4EkP43BmTsO0" target="_blank" rel="noopener">Spotify</a>
+          &nbsp;&middot;&nbsp;
+          <a href="https://music.apple.com/us/artist/rooney-pitchford/1073485638" target="_blank" rel="noopener">Apple Music</a>
+        </span>
+      </footer>
+
+    </div><!-- /panel -->
+
+  </div><!-- /wrap -->
+
+  <script>
+    function toggleEmbed(el) {
+      const panel = el.querySelector('.embed-panel');
+      if (!panel) return;
+      const isOpen = panel.classList.contains('open');
+      document.querySelectorAll('.embed-panel.open').forEach(p => p.classList.remove('open'));
+      if (!isOpen) panel.classList.add('open');
+    }
+  </script>
+
+</body>
+</html>

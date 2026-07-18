@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Rooney Pitchford</title>
+  <meta name="description" content="News and notes from Rooney Pitchford.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/celestial.css">
+</head>
+<body>
+
+  <div class="bg"></div>
+
+  <div class="wrap">
+
+    <nav class="site-nav">
+      <a class="nav-name" href="/">Rooney <em>Pitchford</em></a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/discography.html">Discography</a>
+        <a href="/press.html">Press &amp; Videos</a>
+        <a href="/swag.html">Swag</a>
+        <a href="/blog.html" class="active">Blog</a>
+      </div>
+    </nav>
+
+    <div class="page-hero">
+      <div class="kicker">Austin, Texas &middot; Singer&#8211;songwriter</div>
+      <h1>Blog</h1>
+    </div>
+
+    <div class="panel">
+
+      <div class="section-label">
+        <span>Posts</span>
+        <span class="count">01 post</span>
+      </div>
+
+      <div class="post-list-item">
+        <div class="post-list-title">New site, same songs</div>
+        <div class="post-list-date">July 18, 2026</div>
+        <div class="post-body">
+          <p>The site's had a rebuild &mdash; new design, and now proper pages for discography, press, and video instead of everything on one. Six releases are up, from <em>Familiar Places</em> in 2016 through <em>Turnaround Copy</em> this year, along with a few things the press has said and some live sessions worth a watch.</p>
+          <p>More to come here as there's more to say.</p>
+        </div>
+      </div>
+
+      <footer class="site-footer">
+        <span>Rooney Pitchford</span>
+        <span>
+          <a href="https://rooneypitchford.bandcamp.com" target="_blank" rel="noopener">Bandcamp</a>
+          &nbsp;&middot;&nbsp;
+          <a href="https://open.spotify.com/artist/2NCiQjdyLB4EkP43BmTsO0" target="_blank" rel="noopener">Spotify</a>
+          &nbsp;&middot;&nbsp;
+          <a href="https://music.apple.com/us/artist/rooney-pitchford/1073485638" target="_blank" rel="noopener">Apple Music</a>
+        </span>
+      </footer>
+
+    </div><!-- /panel -->
+
+  </div><!-- /wrap -->
+
+  <script>
+    function toggleEmbed(el) {
+      const panel = el.querySelector('.embed-panel');
+      if (!panel) return;
+      const isOpen = panel.classList.contains('open');
+      document.querySelectorAll('.embed-panel.open').forEach(p => p.classList.remove('open'));
+      if (!isOpen) panel.classList.add('open');
+    }
+  </script>
+
+</body>
+</html>
