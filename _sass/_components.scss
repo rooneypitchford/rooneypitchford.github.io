@@ -1,0 +1,289 @@
+/* ── Release list (discography) ── */
+.releases { border-top: 1px solid var(--line-soft); }
+
+.release-row {
+  display: grid;
+  grid-template-columns: 64px 1fr auto;
+  align-items: baseline;
+  gap: 24px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line-soft);
+  cursor: pointer;
+}
+
+.release-row.static { cursor: default; }
+
+.release-index {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--line-soft);
+  padding-top: 6px;
+}
+
+.release-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(1.4rem, 3.4vw, 2.1rem);
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+.release-title em { font-style: italic; color: var(--accent); }
+
+.release-meta {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 6px;
+}
+
+.release-links {
+  display: flex;
+  gap: 18px;
+  align-items: baseline;
+  justify-self: end;
+}
+
+.release-links a {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid var(--line-soft);
+  padding-bottom: 2px;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.release-links a:hover { color: var(--accent); border-color: var(--accent); }
+
+.embed-panel {
+  grid-column: 1 / -1;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+
+.embed-panel.open { max-height: 400px; margin-top: 20px; }
+.embed-panel iframe { width: 100%; height: 352px; border: none; }
+
+/* ── Press quote ── */
+.press-quote {
+  padding: 40px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.quote-text {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.3rem, 3vw, 1.75rem);
+  line-height: 1.4;
+}
+
+.quote-source {
+  display: inline-block;
+  margin-top: 14px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.quote-source:hover { color: var(--accent); }
+
+/* ── Video grid ── */
+.videos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line-soft);
+  border: 1px solid var(--line-soft);
+  margin-top: 1px;
+}
+
+.video-card { background: var(--paper); padding: 22px; cursor: pointer; }
+
+.video-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+
+.video-meta {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 8px;
+}
+
+.video-watch {
+  display: inline-block;
+  margin-top: 16px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+@media (max-width: 700px) { .videos { grid-template-columns: 1fr; } }
+
+/* ── Swag / merch ── */
+.merch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 8px;
+}
+
+.merch-card {
+  border: 1px solid var(--line-soft);
+  border-radius: 4px;
+  padding: 24px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: border-color 0.15s;
+}
+
+.merch-card:hover { border-color: var(--accent); }
+
+.merch-card .merch-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.merch-card .merch-meta {
+  margin-top: 8px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* ── Blog list ── */
+.post-list { border-top: 1px solid var(--line-soft); }
+
+.post-list-item {
+  display: block;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--line-soft);
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.post-list-item .post-list-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+}
+
+.post-list-item:hover .post-list-title { color: var(--accent); }
+
+.post-list-item .post-list-date {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 6px;
+}
+
+.post-list-item .post-list-excerpt {
+  margin-top: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.empty-state {
+  padding: 40px 0;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+/* ── Single post ── */
+.post-date {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  padding-top: 40px;
+}
+
+.post-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(2rem, 5vw, 2.6rem);
+  letter-spacing: -0.02em;
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+
+.post-content {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.post-content p { margin-bottom: 20px; }
+.post-content a { color: var(--accent); }
+
+/* ── Contact ── */
+.contact-form {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 480px;
+}
+
+.contact-form label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  padding: 10px 12px;
+  border: 1px solid var(--line-soft);
+  border-radius: 3px;
+  background: var(--card);
+  color: var(--ink);
+}
+
+.contact-form button {
+  align-self: flex-start;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 10px 22px;
+  background: var(--accent);
+  color: var(--paper);
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+@media (max-width: 620px) {
+  .release-row { grid-template-columns: 36px 1fr; }
+  .release-links { grid-column: 1 / -1; justify-self: start; margin-top: 8px; }
+}

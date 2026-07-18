@@ -1,0 +1,10 @@
+<header class="site-header">
+  <a class="site-name" href="{{ '/' | relative_url }}">Rooney <em>Pitchford</em></a>
+  <nav class="site-nav">
+    <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="active"{% endif %}>Home</a>
+    <a href="{{ '/discography.html' | relative_url }}"{% if page.url == '/discography.html' %} class="active"{% endif %}>Discography</a>
+    <a href="{{ '/press.html' | relative_url }}"{% if page.url == '/press.html' %} class="active"{% endif %}>Press &amp; Videos</a>
+    <a href="{{ '/swag.html' | relative_url }}"{% if page.url == '/swag.html' %} class="active"{% endif %}>Swag</a>
+    <a href="{{ '/blog.html' | relative_url }}"{% if page.url == '/blog.html' or page.layout == 'post' %} class="active"{% endif %}>Blog</a>
+  </nav>
+</header>

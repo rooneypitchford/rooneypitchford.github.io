@@ -1,0 +1,106 @@
+/* ── Header / nav ── */
+.site-header {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 32px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-bottom: 4px solid var(--line);
+}
+
+.site-name {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 3vw, 1.9rem);
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.site-name em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.site-nav {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink-soft);
+  padding-bottom: 3px;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ── Hero (home page only) ── */
+.hero {
+  padding: 56px 0 40px;
+  border-bottom: 1px solid var(--line-soft);
+  margin-bottom: 4px;
+}
+
+.hero .site-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(2.6rem, 7vw, 4.5rem);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.hero .site-title em { font-style: italic; color: var(--accent); }
+
+.hero .kicker {
+  margin-top: 16px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* ── Generic page ── */
+.page-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  letter-spacing: -0.02em;
+  padding: 48px 0 8px;
+}
+
+/* ── Footer ── */
+.site-footer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 32px 60px;
+  margin-top: 4px;
+  border-top: 4px solid var(--line);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.site-footer a { text-decoration: none; }
+.site-footer a:hover { color: var(--accent); }

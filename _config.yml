@@ -1,0 +1,46 @@
+title: Rooney Pitchford
+tagline: Austin, Texas · Singer-songwriter
+description: >-
+  Official site of Rooney Pitchford — Austin, Texas singer-songwriter.
+  Discography, press, videos, and merch.
+url: "https://rooneypitchford.com"
+baseurl: ""
+
+author:
+  name: Rooney Pitchford
+
+# Social / platform links used across includes
+social:
+  spotify: "https://open.spotify.com/artist/2NCiQjdyLB4EkP43BmTsO0"
+  apple_music: "https://music.apple.com/us/artist/rooney-pitchford/1073485638"
+  bandcamp: "https://rooneypitchford.bandcamp.com"
+  youtube: "https://www.youtube.com/@rooneypitchford5078"
+
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "page"

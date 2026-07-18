@@ -1,0 +1,23 @@
+---
+layout: page
+title: Blog
+---
+
+<div class="section-label">
+  <span>Posts</span>
+  <span class="count">{{ site.posts | size }} {% if site.posts.size == 1 %}post{% else %}posts{% endif %}</span>
+</div>
+
+{% if site.posts.size > 0 %}
+<div class="post-list">
+  {% for post in site.posts %}
+  <a class="post-list-item" href="{{ post.url | relative_url }}">
+    <div class="post-list-title">{{ post.title }}</div>
+    <div class="post-list-date">{{ post.date | date: "%B %-d, %Y" }}</div>
+    <div class="post-list-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</div>
+  </a>
+  {% endfor %}
+</div>
+{% else %}
+<p class="empty-state">Nothing posted yet — check back soon.</p>
+{% endif %}
