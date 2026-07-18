@@ -6,561 +6,385 @@
   <title>Rooney Pitchford</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Libre+Baskerville:ital@0;1&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:       #0f0d0a;
-      --bg2:      #1a1712;
-      --bg3:      #231f19;
-      --border:   #2e2a22;
-      --amber:    #c8873a;
-      --amber-lt: #e0a55a;
-      --cream:    #e8dfc8;
-      --muted:    #7a7060;
-      --faint:    #3a3428;
-      --spotify:  #1db954;
-      --apple:    #fc3c44;
-      --youtube:  #ff0000;
-      --bandcamp: #629aa9;
+      --paper:    #f4f2ec;
+      --ink:      #14120f;
+      --ink-soft: #4a463e;
+      --line:     #14120f;
+      --line-soft:#c9c4b6;
+      --accent:   #8C1515;
+      --card:     #ffffff;
     }
 
-    html { background: var(--bg); color: var(--cream); }
+    html { background: var(--paper); }
 
     body {
-      font-family: 'Libre Baskerville', Georgia, serif;
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: var(--ink);
       min-height: 100vh;
-      max-width: 780px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 0 24px 80px;
+      padding: 0 32px 120px;
     }
 
-    /* ── Header ── */
     header {
-      padding: 72px 0 56px;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 56px;
+      padding: 56px 0 40px;
+      border-bottom: 4px solid var(--line);
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 16px;
     }
 
     .site-name {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(2.4rem, 6vw, 3.6rem);
-      font-weight: 400;
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-      color: var(--cream);
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(3rem, 9vw, 6rem);
+      letter-spacing: -0.03em;
+      line-height: 0.92;
     }
 
-    .site-name em {
-      font-style: italic;
-      color: var(--amber-lt);
-    }
-
-    .tagline {
-      margin-top: 14px;
+    .kicker {
       font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--muted);
+      color: var(--ink-soft);
+      padding-bottom: 8px;
+      text-align: right;
     }
+
+    .kicker span { display: block; }
 
     /* ── Section label ── */
     .section-label {
       font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 28px;
-    }
-
-    /* ── Album cards ── */
-    .albums { display: flex; flex-direction: column; gap: 2px; }
-
-    .album-card {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      overflow: hidden;
-      transition: border-color 0.2s;
-    }
-
-    .album-card:hover { border-color: var(--faint); }
-
-    .album-header {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      padding: 24px 28px;
-      cursor: default;
-    }
-
-    .album-color-bar {
-      width: 3px;
-      height: 52px;
-      border-radius: 2px;
-      flex-shrink: 0;
-    }
-
-    .album-meta { flex: 1; min-width: 0; }
-
-    .album-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--cream);
-      line-height: 1.2;
-    }
-
-    .album-info {
-      margin-top: 4px;
-      font-family: 'DM Mono', monospace;
       font-size: 0.68rem;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    /* ── Links row ── */
-    .album-links {
+      color: var(--accent);
+      padding: 40px 0 20px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 0;
       display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      padding: 0 28px 20px 51px;
+      justify-content: space-between;
     }
 
-    .link-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      padding: 6px 14px;
-      border-radius: 3px;
+    .section-label .count { color: var(--line-soft); }
+
+    /* ── Release list (editorial index style) ── */
+    .releases { border-top: 1px solid var(--line-soft); }
+
+    .release-row {
+      display: grid;
+      grid-template-columns: 64px 1fr auto;
+      align-items: baseline;
+      gap: 24px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line-soft);
+      cursor: pointer;
+    }
+
+    .release-index {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--line-soft);
+      padding-top: 6px;
+    }
+
+    .release-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(1.4rem, 3.4vw, 2.1rem);
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+    }
+
+    .release-title em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .release-meta {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-top: 6px;
+    }
+
+    .release-links {
+      display: flex;
+      gap: 18px;
+      align-items: baseline;
+      justify-self: end;
+    }
+
+    .release-links a {
       font-family: 'DM Mono', monospace;
       font-size: 0.68rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+      color: var(--ink);
       text-decoration: none;
-      border: 1px solid currentColor;
-      opacity: 0.75;
-      transition: opacity 0.15s, background 0.15s;
-    }
-
-    .link-btn:hover { opacity: 1; background: rgba(255,255,255,0.04); }
-
-    .link-btn.spotify  { color: var(--spotify); }
-    .link-btn.apple    { color: var(--apple); }
-    .link-btn.youtube  { color: var(--youtube); }
-    .link-btn.bandcamp { color: var(--bandcamp); }
-    .link-btn.placeholder { color: var(--faint); border-color: var(--faint); cursor: not-allowed; opacity: 0.4; }
-
-    /* Platform icons (inline SVG via background) */
-    .icon { width: 12px; height: 12px; flex-shrink: 0; }
-
-    /* ── Embed toggle ── */
-    .embed-toggle {
-      margin-left: auto;
-      flex-shrink: 0;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 14px;
-      background: transparent;
-      border: 1px solid var(--faint);
-      border-radius: 3px;
-      color: var(--muted);
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      cursor: pointer;
+      border-bottom: 1px solid var(--line-soft);
+      padding-bottom: 2px;
       transition: border-color 0.15s, color 0.15s;
     }
 
-    .embed-toggle:hover { border-color: var(--amber); color: var(--amber); }
+    .release-links a:hover { color: var(--accent); border-color: var(--accent); }
 
-    .embed-toggle .arrow {
-      display: inline-block;
-      transition: transform 0.25s;
-      font-style: normal;
-    }
-
-    .embed-toggle.open .arrow { transform: rotate(180deg); }
-
-    /* ── Embed panel ── */
     .embed-panel {
+      grid-column: 1 / -1;
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
-      background: var(--bg3);
-      border-top: 0px solid var(--border);
     }
 
-    .embed-panel.open {
-      max-height: 420px;
-      border-top-width: 1px;
-    }
+    .embed-panel.open { max-height: 400px; margin-top: 20px; }
 
-    .embed-panel iframe {
-      display: block;
-      width: 100%;
-      border: none;
-      padding: 16px;
-    }
-
-    /* ── Divider ── */
-    .divider {
-      width: 40px;
-      height: 1px;
-      background: var(--border);
-      margin: 48px 0;
-    }
+    .embed-panel iframe { width: 100%; height: 352px; border: none; }
 
     /* ── Press quote ── */
     .press-quote {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--amber);
-      border-radius: 4px;
-      padding: 24px 28px;
-      margin-bottom: 32px;
+      padding: 48px 0;
+      border-bottom: 1px solid var(--line-soft);
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 32px;
+      align-items: start;
     }
 
     .quote-text {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: 'Fraunces', Georgia, serif;
       font-style: italic;
-      font-size: 1.05rem;
-      line-height: 1.55;
-      color: var(--cream);
+      font-weight: 400;
+      font-size: clamp(1.3rem, 3vw, 1.75rem);
+      line-height: 1.4;
+      letter-spacing: -0.005em;
     }
 
     .quote-source {
-      display: inline-block;
-      margin-top: 12px;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      text-decoration: none;
-    }
-
-    .quote-source:hover { color: var(--amber); }
-
-    .press-footnote {
-      margin-top: 20px;
       font-family: 'DM Mono', monospace;
       font-size: 0.68rem;
-      color: var(--muted);
-      line-height: 1.6;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      text-decoration: none;
+      justify-self: end;
+      text-align: right;
+      padding-top: 8px;
     }
 
-    .press-footnote a { color: var(--amber-lt); text-decoration: none; }
-    .press-footnote a:hover { text-decoration: underline; }
+    .quote-source:hover { color: var(--accent); }
+
+    @media (max-width: 620px) {
+      .press-quote { grid-template-columns: 1fr; }
+      .quote-source { justify-self: start; text-align: left; }
+    }
+
+    /* ── Video grid ── */
+    .videos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line-soft);
+      border: 1px solid var(--line-soft);
+      margin-top: 1px;
+    }
+
+    .video-card {
+      background: var(--paper);
+      padding: 22px;
+      cursor: pointer;
+    }
+
+    .video-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 500;
+      font-size: 1.05rem;
+      line-height: 1.25;
+    }
+
+    .video-meta {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-top: 8px;
+    }
+
+    .video-watch {
+      display: inline-block;
+      margin-top: 16px;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    @media (max-width: 700px) {
+      .videos { grid-template-columns: 1fr; }
+    }
 
     /* ── Footer ── */
     footer {
-      padding-top: 48px;
-      border-top: 1px solid var(--border);
+      margin-top: 4px;
+      padding-top: 32px;
+      border-top: 4px solid var(--line);
       font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
-      color: var(--muted);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 8px;
     }
 
-    footer a { color: var(--muted); text-decoration: none; }
-    footer a:hover { color: var(--amber); }
-
-    /* ── Responsive ── */
-    @media (max-width: 520px) {
-      .album-header { padding: 20px; gap: 14px; }
-      .album-links  { padding: 0 20px 18px 37px; }
-      .embed-toggle { display: none; } /* on mobile just show links */
-    }
+    footer a { color: var(--ink); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
   </style>
 </head>
 <body>
 
   <header>
-    <h1 class="site-name">Rooney <em>Pitchford</em></h1>
-    <p class="tagline">Austin, Texas &nbsp;·&nbsp; Singer-songwriter</p>
+    <h1 class="site-name">Rooney<br><em style="font-style:italic; color: var(--accent);">Pitchford</em></h1>
+    <div class="kicker">
+      <span>Austin, Texas</span>
+      <span>Singer&#8211;songwriter</span>
+    </div>
   </header>
 
-  <p class="section-label">Music</p>
-
-  <div class="albums">
-
-    <!-- ── TURNAROUND COPY EP ── -->
-    <div class="album-card">
-      <div class="album-header">
-        <div class="album-color-bar" style="background: var(--amber);"></div>
-        <div class="album-meta">
-          <div class="album-title">Turnaround Copy</div>
-          <div class="album-info">EP &nbsp;·&nbsp; 2025</div>
-        </div>
-        <button class="embed-toggle" onclick="toggleEmbed(this)" aria-label="Listen inline">
-          Listen <span class="arrow">▾</span>
-        </button>
-      </div>
-      <div class="album-links">
-        <a class="link-btn spotify"
-           href="https://open.spotify.com/album/6jBcSmWoLMsZgBCqh7qbZp"
-           target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-          Spotify
-        </a>
-        <a class="link-btn apple"
-           href="https://music.apple.com/us/album/turnaround-copy-ep/1890152503"
-           target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M23.997 6.124a.75.75 0 00-.23-.53L18.41.217A.75.75 0 0017.879 0H6.12a.75.75 0 00-.53.217L.232 5.594a.75.75 0 00-.23.53v11.754c0 .199.079.39.22.53l5.337 5.376a.75.75 0 00.53.216h11.758a.75.75 0 00.53-.216l5.337-5.376a.75.75 0 00.22-.53V6.124zm-11.999 9.52a2.894 2.894 0 110-5.788 2.894 2.894 0 010 5.788z"/></svg>
-          Apple Music
-        </a>
-      </div>
-      <div class="embed-panel">
-        <iframe src="https://open.spotify.com/embed/album/6jBcSmWoLMsZgBCqh7qbZp?utm_source=generator&theme=0"
-                height="352"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"></iframe>
-      </div>
-    </div>
-
-    <!-- ── RED-TAILED HAWK EP ── -->
-    <div class="album-card">
-      <div class="album-header">
-        <div class="album-color-bar" style="background: #b85c2a;"></div>
-        <div class="album-meta">
-          <div class="album-title">Red-Tailed Hawk</div>
-          <div class="album-info">EP</div>
-        </div>
-        <button class="embed-toggle" onclick="toggleEmbed(this)" aria-label="Listen inline">
-          Listen <span class="arrow">▾</span>
-        </button>
-      </div>
-      <div class="album-links">
-        <a class="link-btn spotify"
-           href="https://open.spotify.com/album/4KSWSjOtPWm860FJN5n1az"
-           target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-          Spotify
-        </a>
-      </div>
-      <div class="embed-panel">
-        <iframe src="https://open.spotify.com/embed/album/4KSWSjOtPWm860FJN5n1az?utm_source=generator&theme=0"
-                height="352"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"></iframe>
-      </div>
-    </div>
-
-    <!-- ── FAMILIAR PLACES ── -->
-    <div class="album-card">
-      <div class="album-header">
-        <div class="album-color-bar" style="background: #9a7aae;"></div>
-        <div class="album-meta">
-          <div class="album-title">Familiar Places</div>
-          <div class="album-info">Album &nbsp;·&nbsp; 2016</div>
-        </div>
-        <button class="embed-toggle" onclick="toggleEmbed(this)" aria-label="Listen inline">
-          Listen <span class="arrow">▾</span>
-        </button>
-      </div>
-      <div class="album-links">
-        <a class="link-btn spotify"
-           href="https://open.spotify.com/album/5hSgqDnRpMECBVoGG3nbh2"
-           target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-          Spotify
-        </a>
-        <a class="link-btn bandcamp"
-           href="https://rooneypitchford.bandcamp.com/album/familiar-places"
-           target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M0 18.75l7.437-13.5H24l-7.438 13.5z"/></svg>
-          Bandcamp
-        </a>
-      </div>
-      <div class="embed-panel">
-        <iframe src="https://open.spotify.com/embed/album/5hSgqDnRpMECBVoGG3nbh2?utm_source=generator&theme=0"
-                height="352"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"></iframe>
-      </div>
-    </div>
-
-    <!-- ── PENINSULA ── -->
-    <div class="album-card">
-      <div class="album-header">
-        <div class="album-color-bar" style="background: #4a7fa5;"></div>
-        <div class="album-meta">
-          <div class="album-title">Peninsula</div>
-          <div class="album-info">Single &nbsp;·&nbsp; 2018</div>
-        </div>
-        <button class="embed-toggle" onclick="toggleEmbed(this)" aria-label="Listen inline">
-          Listen <span class="arrow">▾</span>
-        </button>
-      </div>
-      <div class="album-links">
-        <a class="link-btn spotify"
-           href="https://open.spotify.com/album/1t0gdgnlYuoJaHHycY7Gg0"
-           target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-          Spotify
-        </a>
-        <a class="link-btn bandcamp"
-           href="https://rooneypitchford.bandcamp.com/releases"
-           target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M0 18.75l7.437-13.5H24l-7.438 13.5z"/></svg>
-          Bandcamp
-        </a>
-      </div>
-      <div class="embed-panel">
-        <iframe src="https://open.spotify.com/embed/album/1t0gdgnlYuoJaHHycY7Gg0?utm_source=generator&theme=0"
-                height="352"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"></iframe>
-      </div>
-    </div>
-
-    <!-- ── PACHONCITO EP ── -->
-    <div class="album-card">
-      <div class="album-header">
-        <div class="album-color-bar" style="background: #629aa9;"></div>
-        <div class="album-meta">
-          <div class="album-title">Pachoncito</div>
-          <div class="album-info">EP &nbsp;·&nbsp; 2017</div>
-        </div>
-        <button class="embed-toggle" onclick="toggleEmbed(this)" aria-label="Listen inline">
-          Listen <span class="arrow">▾</span>
-        </button>
-      </div>
-      <div class="album-links">
-        <a class="link-btn spotify"
-           href="https://open.spotify.com/album/1JVbwx0OTAcBehadaVmf14"
-           target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-          Spotify
-        </a>
-        <a class="link-btn bandcamp"
-           href="https://rooneypitchford.bandcamp.com/album/pachoncito"
-           target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M0 18.75l7.437-13.5H24l-7.438 13.5z"/></svg>
-          Bandcamp
-        </a>
-      </div>
-      <div class="embed-panel">
-        <iframe src="https://open.spotify.com/embed/album/1JVbwx0OTAcBehadaVmf14?utm_source=generator&theme=0"
-                height="352"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"></iframe>
-      </div>
-    </div>
-
-  </div><!-- /albums -->
-
-  <div class="divider"></div>
-
-  <p class="section-label">Press &amp; Videos</p>
-
-  <div class="press-quote">
-    <p class="quote-text">&ldquo;A masterpiece of production and songwriting, containing some truly astounding lyricism&hellip; flows elegantly without ever getting old.&rdquo;</p>
-    <a class="quote-source" href="https://stanforddaily.com/2017/01/30/getting-to-know-rooney-pitchford/" target="_blank" rel="noopener">— The Stanford Daily</a>
+  <div class="section-label">
+    <span>Discography</span>
+    <span class="count">05 releases</span>
   </div>
 
-  <div class="albums">
+  <div class="releases">
 
-    <!-- ── VIDEO: SOUTH SIDE OF AUSTIN (SOFAR SF) ── -->
-    <div class="album-card">
-      <div class="album-header">
-        <div class="album-color-bar" style="background: var(--youtube);"></div>
-        <div class="album-meta">
-          <div class="album-title">South Side of Austin</div>
-          <div class="album-info">Live &nbsp;·&nbsp; Sofar San Francisco</div>
-        </div>
-        <button class="embed-toggle" onclick="toggleEmbed(this)" aria-label="Watch inline">
-          Watch <span class="arrow">▾</span>
-        </button>
+    <div class="release-row" onclick="toggleEmbed(this)">
+      <div class="release-index">01</div>
+      <div>
+        <div class="release-title">Turnaround <em>Copy</em></div>
+        <div class="release-meta">EP · 2025</div>
       </div>
-      <div class="album-links">
-        <a class="link-btn youtube"
-           href="https://www.youtube.com/watch?v=RDOBH1H0PcI"
-           target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a2.997 2.997 0 0 0-2.112-2.12C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.386.521A2.997 2.997 0 0 0 .502 6.186 31.26 31.26 0 0 0 0 12a31.26 31.26 0 0 0 .502 5.814 2.997 2.997 0 0 0 2.112 2.12c1.881.521 9.386.521 9.386.521s7.505 0 9.386-.521a2.997 2.997 0 0 0 2.112-2.12A31.26 31.26 0 0 0 24 12a31.26 31.26 0 0 0-.502-5.814ZM9.545 15.568V8.432L15.818 12l-6.273 3.568Z"/></svg>
-          YouTube
-        </a>
+      <div class="release-links">
+        <a href="https://open.spotify.com/album/6jBcSmWoLMsZgBCqh7qbZp" target="_blank" rel="noopener" onclick="event.stopPropagation()">Spotify</a>
+        <a href="https://music.apple.com/us/album/turnaround-copy-ep/1890152503" target="_blank" rel="noopener" onclick="event.stopPropagation()">Apple</a>
       </div>
       <div class="embed-panel">
-        <iframe src="https://www.youtube-nocookie.com/embed/RDOBH1H0PcI"
-                height="352"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                loading="lazy" allowfullscreen></iframe>
+        <iframe src="https://open.spotify.com/embed/album/6jBcSmWoLMsZgBCqh7qbZp?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       </div>
     </div>
 
-    <!-- ── VIDEO: NEW ORLEANS SONG (POSSUM TROT) ── -->
-    <div class="album-card">
-      <div class="album-header">
-        <div class="album-color-bar" style="background: var(--youtube);"></div>
-        <div class="album-meta">
-          <div class="album-title">New Orleans Song</div>
-          <div class="album-info">Live &nbsp;·&nbsp; Possum Trot Studios</div>
-        </div>
-        <button class="embed-toggle" onclick="toggleEmbed(this)" aria-label="Watch inline">
-          Watch <span class="arrow">▾</span>
-        </button>
+    <div class="release-row" onclick="toggleEmbed(this)">
+      <div class="release-index">02</div>
+      <div>
+        <div class="release-title">Red-Tailed <em>Hawk</em></div>
+        <div class="release-meta">EP</div>
       </div>
-      <div class="album-links">
-        <a class="link-btn youtube"
-           href="https://www.youtube.com/watch?v=R8AfjrxamMs"
-           target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a2.997 2.997 0 0 0-2.112-2.12C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.386.521A2.997 2.997 0 0 0 .502 6.186 31.26 31.26 0 0 0 0 12a31.26 31.26 0 0 0 .502 5.814 2.997 2.997 0 0 0 2.112 2.12c1.881.521 9.386.521 9.386.521s7.505 0 9.386-.521a2.997 2.997 0 0 0 2.112-2.12A31.26 31.26 0 0 0 24 12a31.26 31.26 0 0 0-.502-5.814ZM9.545 15.568V8.432L15.818 12l-6.273 3.568Z"/></svg>
-          YouTube
-        </a>
+      <div class="release-links">
+        <a href="https://open.spotify.com/album/4KSWSjOtPWm860FJN5n1az" target="_blank" rel="noopener" onclick="event.stopPropagation()">Spotify</a>
       </div>
       <div class="embed-panel">
-        <iframe src="https://www.youtube-nocookie.com/embed/R8AfjrxamMs"
-                height="352"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                loading="lazy" allowfullscreen></iframe>
+        <iframe src="https://open.spotify.com/embed/album/4KSWSjOtPWm860FJN5n1az?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       </div>
     </div>
 
-    <!-- ── VIDEO: PANCHO AND LEFTY (COVER) ── -->
-    <div class="album-card">
-      <div class="album-header">
-        <div class="album-color-bar" style="background: var(--youtube);"></div>
-        <div class="album-meta">
-          <div class="album-title">Pancho and Lefty</div>
-          <div class="album-info">Townes Van Zandt Cover</div>
-        </div>
-        <button class="embed-toggle" onclick="toggleEmbed(this)" aria-label="Watch inline">
-          Watch <span class="arrow">▾</span>
-        </button>
+    <div class="release-row" onclick="toggleEmbed(this)">
+      <div class="release-index">03</div>
+      <div>
+        <div class="release-title">Familiar <em>Places</em></div>
+        <div class="release-meta">Album · 2016</div>
       </div>
-      <div class="album-links">
-        <a class="link-btn youtube"
-           href="https://www.youtube.com/watch?v=JyEKzi8QnVI"
-           target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a2.997 2.997 0 0 0-2.112-2.12C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.386.521A2.997 2.997 0 0 0 .502 6.186 31.26 31.26 0 0 0 0 12a31.26 31.26 0 0 0 .502 5.814 2.997 2.997 0 0 0 2.112 2.12c1.881.521 9.386.521 9.386.521s7.505 0 9.386-.521a2.997 2.997 0 0 0 2.112-2.12A31.26 31.26 0 0 0 24 12a31.26 31.26 0 0 0-.502-5.814ZM9.545 15.568V8.432L15.818 12l-6.273 3.568Z"/></svg>
-          YouTube
-        </a>
+      <div class="release-links">
+        <a href="https://open.spotify.com/album/5hSgqDnRpMECBVoGG3nbh2" target="_blank" rel="noopener" onclick="event.stopPropagation()">Spotify</a>
+        <a href="https://rooneypitchford.bandcamp.com/album/familiar-places" target="_blank" rel="noopener" onclick="event.stopPropagation()">Bandcamp</a>
       </div>
       <div class="embed-panel">
-        <iframe src="https://www.youtube-nocookie.com/embed/JyEKzi8QnVI"
-                height="352"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                loading="lazy" allowfullscreen></iframe>
+        <iframe src="https://open.spotify.com/embed/album/5hSgqDnRpMECBVoGG3nbh2?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       </div>
     </div>
 
-  </div><!-- /videos -->
+    <div class="release-row" onclick="toggleEmbed(this)">
+      <div class="release-index">04</div>
+      <div>
+        <div class="release-title">Peninsula</div>
+        <div class="release-meta">Single · 2018</div>
+      </div>
+      <div class="release-links">
+        <a href="https://open.spotify.com/album/1t0gdgnlYuoJaHHycY7Gg0" target="_blank" rel="noopener" onclick="event.stopPropagation()">Spotify</a>
+        <a href="https://rooneypitchford.bandcamp.com/releases" target="_blank" rel="noopener" onclick="event.stopPropagation()">Bandcamp</a>
+      </div>
+      <div class="embed-panel">
+        <iframe src="https://open.spotify.com/embed/album/1t0gdgnlYuoJaHHycY7Gg0?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+    </div>
 
-  <p class="press-footnote">Full session catalog on <a href="https://www.youtube.com/channel/UComH7U0Up_l9tMn5tyht_VA" target="_blank" rel="noopener">YouTube</a>.</p>
+    <div class="release-row" onclick="toggleEmbed(this)">
+      <div class="release-index">05</div>
+      <div>
+        <div class="release-title">Pachoncito</div>
+        <div class="release-meta">EP · 2017</div>
+      </div>
+      <div class="release-links">
+        <a href="https://open.spotify.com/album/1JVbwx0OTAcBehadaVmf14" target="_blank" rel="noopener" onclick="event.stopPropagation()">Spotify</a>
+        <a href="https://rooneypitchford.bandcamp.com/album/pachoncito" target="_blank" rel="noopener" onclick="event.stopPropagation()">Bandcamp</a>
+      </div>
+      <div class="embed-panel">
+        <iframe src="https://open.spotify.com/embed/album/1JVbwx0OTAcBehadaVmf14?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+    </div>
 
-  <div class="divider"></div>
+  </div>
+
+  <div class="press-quote">
+    <p class="quote-text">"A masterpiece of production and songwriting, containing some truly astounding lyricism&hellip; flows elegantly without ever getting old."</p>
+    <a class="quote-source" href="https://stanforddaily.com/2017/01/30/getting-to-know-rooney-pitchford/" target="_blank" rel="noopener">The Stanford Daily</a>
+  </div>
+
+  <div class="section-label">
+    <span>Videos</span>
+    <span class="count">03 sessions</span>
+  </div>
+
+  <div class="videos">
+    <div class="video-card" onclick="toggleEmbed(this)">
+      <div class="video-title">South Side of Austin</div>
+      <div class="video-meta">Live · Sofar San Francisco</div>
+      <a class="video-watch" href="https://www.youtube.com/watch?v=RDOBH1H0PcI" target="_blank" rel="noopener" onclick="event.stopPropagation()">Watch on YouTube &#8594;</a>
+      <div class="embed-panel">
+        <iframe src="https://www.youtube-nocookie.com/embed/RDOBH1H0PcI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="video-card" onclick="toggleEmbed(this)">
+      <div class="video-title">New Orleans Song</div>
+      <div class="video-meta">Live · Possum Trot Studios</div>
+      <a class="video-watch" href="https://www.youtube.com/watch?v=R8AfjrxamMs" target="_blank" rel="noopener" onclick="event.stopPropagation()">Watch on YouTube &#8594;</a>
+      <div class="embed-panel">
+        <iframe src="https://www.youtube-nocookie.com/embed/R8AfjrxamMs" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="video-card" onclick="toggleEmbed(this)">
+      <div class="video-title">Pancho and Lefty</div>
+      <div class="video-meta">Townes Van Zandt Cover</div>
+      <a class="video-watch" href="https://www.youtube.com/watch?v=JyEKzi8QnVI" target="_blank" rel="noopener" onclick="event.stopPropagation()">Watch on YouTube &#8594;</a>
+      <div class="embed-panel">
+        <iframe src="https://www.youtube-nocookie.com/embed/JyEKzi8QnVI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
 
   <footer>
     <span>Rooney Pitchford</span>
@@ -574,13 +398,12 @@
   </footer>
 
   <script>
-    function toggleEmbed(btn) {
-      const card  = btn.closest('.album-card');
-      const panel = card.querySelector('.embed-panel');
+    function toggleEmbed(el) {
+      const panel = el.querySelector('.embed-panel');
+      if (!panel) return;
       const isOpen = panel.classList.contains('open');
-      panel.classList.toggle('open', !isOpen);
-      btn.classList.toggle('open', !isOpen);
-      btn.querySelector('.arrow').textContent = isOpen ? '▾' : '▴';
+      document.querySelectorAll('.embed-panel.open').forEach(p => p.classList.remove('open'));
+      if (!isOpen) panel.classList.add('open');
     }
   </script>
 
