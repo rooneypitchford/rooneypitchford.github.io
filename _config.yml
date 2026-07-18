@@ -37,10 +37,11 @@ exclude:
 defaults:
   - scope:
       path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
       type: "posts"
     values:
       layout: "post"
-  - scope:
-      path: ""
-    values:
-      layout: "page"
