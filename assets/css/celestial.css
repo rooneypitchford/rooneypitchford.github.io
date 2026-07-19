@@ -87,6 +87,57 @@ body {
   border-color: var(--gold-lt);
 }
 
+/* ── Homepage hero (full, dramatic) ── */
+.hero {
+  min-height: 56vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 56px;
+}
+
+.hero .kicker {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-lt);
+  margin-bottom: 18px;
+  text-shadow: 0 2px 18px rgba(0,0,0,0.45);
+}
+
+.hero .site-name {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(3.2rem, 9vw, 6.5rem);
+  letter-spacing: -0.02em;
+  line-height: 0.98;
+  color: var(--hero-text);
+  text-shadow: 0 4px 32px rgba(0,0,0,0.5);
+}
+
+.hero .site-name em {
+  font-style: italic;
+  font-weight: 400;
+  background: linear-gradient(120deg, var(--gold-lt), var(--gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero .tagline {
+  margin-top: 20px;
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--hero-text);
+  opacity: 0.92;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.5);
+}
+
+/* Panel that tucks under the hero */
+.panel.tucked { margin-top: -12px; }
+
 /* ── Page hero (compact, for sub-pages) ── */
 .page-hero {
   padding: 64px 0 40px;
@@ -262,15 +313,17 @@ body {
 }
 
 .video-card {
+  display: block;
   background: rgba(255,255,255,0.4);
   border: 1px solid rgba(255,255,255,0.55);
   border-radius: 12px;
   padding: 20px;
-  cursor: pointer;
-  transition: background 0.2s;
+  text-decoration: none;
+  color: var(--ink);
+  transition: background 0.2s, transform 0.2s;
 }
 
-.video-card:hover { background: rgba(255,255,255,0.58); }
+.video-card:hover { background: rgba(255,255,255,0.58); transform: translateY(-2px); }
 
 .video-title {
   font-family: 'Fraunces', Georgia, serif;

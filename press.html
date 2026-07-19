@@ -5,6 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Press & Videos — Rooney Pitchford</title>
   <meta name="description" content="Press coverage and live session videos from Rooney Pitchford.">
+  <meta name="theme-color" content="#0b0d17">
+  <link rel="canonical" href="https://rooneypitchford.com/press.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Rooney Pitchford">
+  <meta property="og:title" content="Press & Videos — Rooney Pitchford">
+  <meta property="og:description" content="Press coverage and live session videos.">
+  <meta property="og:url" content="https://rooneypitchford.com/press.html">
+  <meta property="og:image" content="https://rooneypitchford.com/assets/images/backdrop.jpg">
+  <meta property="og:image:width" content="1536">
+  <meta property="og:image:height" content="1024">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Press & Videos — Rooney Pitchford">
+  <meta name="twitter:description" content="Press coverage and live session videos.">
+  <meta name="twitter:image" content="https://rooneypitchford.com/assets/images/backdrop.jpg">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -45,30 +62,21 @@
       </div>
 
       <div class="videos">
-        <div class="video-card" onclick="toggleEmbed(this)">
+        <a class="video-card" href="https://www.youtube.com/watch?v=RDOBH1H0PcI" target="_blank" rel="noopener">
           <div class="video-title">South Side of Austin</div>
           <div class="video-meta">Live &middot; Sofar San Francisco</div>
-          <a class="video-watch" href="https://www.youtube.com/watch?v=RDOBH1H0PcI" target="_blank" rel="noopener" onclick="event.stopPropagation()">Watch &#8594;</a>
-          <div class="embed-panel">
-            <iframe src="https://www.youtube-nocookie.com/embed/RDOBH1H0PcI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
-          </div>
-        </div>
-        <div class="video-card" onclick="toggleEmbed(this)">
+          <span class="video-watch">Watch &#8594;</span>
+        </a>
+        <a class="video-card" href="https://www.youtube.com/watch?v=R8AfjrxamMs" target="_blank" rel="noopener">
           <div class="video-title">New Orleans Song</div>
           <div class="video-meta">Live &middot; Possum Trot Studios</div>
-          <a class="video-watch" href="https://www.youtube.com/watch?v=R8AfjrxamMs" target="_blank" rel="noopener" onclick="event.stopPropagation()">Watch &#8594;</a>
-          <div class="embed-panel">
-            <iframe src="https://www.youtube-nocookie.com/embed/R8AfjrxamMs" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
-          </div>
-        </div>
-        <div class="video-card" onclick="toggleEmbed(this)">
+          <span class="video-watch">Watch &#8594;</span>
+        </a>
+        <a class="video-card" href="https://www.youtube.com/watch?v=JyEKzi8QnVI" target="_blank" rel="noopener">
           <div class="video-title">Pancho and Lefty</div>
           <div class="video-meta">Townes Van Zandt Cover</div>
-          <a class="video-watch" href="https://www.youtube.com/watch?v=JyEKzi8QnVI" target="_blank" rel="noopener" onclick="event.stopPropagation()">Watch &#8594;</a>
-          <div class="embed-panel">
-            <iframe src="https://www.youtube-nocookie.com/embed/JyEKzi8QnVI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
-          </div>
-        </div>
+          <span class="video-watch">Watch &#8594;</span>
+        </a>
       </div>
 
       <p class="footnote">Full session catalog on <a href="https://www.youtube.com/@rooneypitchford5078" target="_blank" rel="noopener">YouTube</a>.</p>
@@ -87,16 +95,6 @@
     </div><!-- /panel -->
 
   </div><!-- /wrap -->
-
-  <script>
-    function toggleEmbed(el) {
-      const panel = el.querySelector('.embed-panel');
-      if (!panel) return;
-      const isOpen = panel.classList.contains('open');
-      document.querySelectorAll('.embed-panel.open').forEach(p => p.classList.remove('open'));
-      if (!isOpen) panel.classList.add('open');
-    }
-  </script>
 
 </body>
 </html>
