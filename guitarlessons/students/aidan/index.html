@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aidan — Lesson Files</title>
+
+  <!-- Keep this page out of Google and other search engines. Do not remove. -->
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+
+  <meta name="theme-color" content="#0b0d17">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/celestial.css">
+
+  <style>
+    /* Scoped to the lesson-files pages only. */
+    .file-row {
+      display: grid;
+      grid-template-columns: 46px 1fr auto;
+      gap: 18px;
+      align-items: center;
+      padding: 22px 0;
+      border-bottom: 1px solid rgba(32,26,18,0.10);
+      text-decoration: none;
+      color: var(--ink);
+      transition: background 0.18s ease;
+    }
+    .file-row:last-child { border-bottom: none; }
+    .file-row:hover { background: rgba(255,255,255,0.34); }
+    .file-row:hover .file-name { color: var(--gold); }
+
+    .file-kind {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(217,165,102,0.5);
+      border-radius: 5px;
+      padding: 5px 0;
+      text-align: center;
+    }
+
+    .file-name {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 500;
+      font-size: 1.16rem;
+      line-height: 1.35;
+      word-break: break-word;
+    }
+
+    .file-note {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.86rem;
+      color: var(--ink-soft);
+      margin-top: 4px;
+    }
+
+    .file-meta {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      white-space: nowrap;
+      text-align: right;
+    }
+
+    .intro {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.04rem;
+      line-height: 1.65;
+      color: var(--ink);
+      padding-top: 28px;
+    }
+
+    @media (max-width: 620px) {
+      .file-row { grid-template-columns: 40px 1fr; gap: 14px; }
+      .file-meta { grid-column: 2 / -1; text-align: left; margin-top: 2px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg"></div>
+
+  <div class="wrap">
+
+    <nav class="site-nav">
+      <a class="nav-name" href="/">Rooney <em>Pitchford</em></a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+      </div>
+    </nav>
+
+    <div class="page-hero">
+      <div class="kicker">Guitar Lessons &middot; Student Materials</div>
+      <h1>Aidan</h1>
+    </div>
+
+    <div class="panel">
+
+      <p class="intro">Everything from our lessons lives here &mdash; tabs, charts, backing tracks, and recordings. Tap any item to open or download it. New material shows up at the top.</p>
+
+      <div class="section-label">
+        <span>Files</span>
+        <span class="count"><!-- COUNT:START -->00 items<!-- COUNT:END --></span>
+      </div>
+
+      <div class="files">
+<!-- FILES:START -->
+        <div class="empty-state">Nothing here yet &mdash; files from our next lesson will appear on this page.</div>
+<!-- FILES:END -->
+      </div>
+
+      <p class="footnote">This page is private-ish: it&rsquo;s hidden from search engines and isn&rsquo;t linked anywhere on the site. Anyone with the exact link can open it, so please don&rsquo;t share it around.</p>
+
+      <footer class="site-footer">
+        <span>Rooney Pitchford</span>
+        <span><a href="/">rooneypitchford.com</a></span>
+      </footer>
+
+    </div><!-- /panel -->
+
+  </div><!-- /wrap -->
+
+</body>
+</html>

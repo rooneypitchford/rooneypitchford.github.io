@@ -1,0 +1,6 @@
+# Optional one-line notes shown under a file on the lesson page.
+# One line per file, in the form:   filename.pdf | your note here
+# Lines starting with # are ignored. Delete or ignore this file if you don't want notes.
+#
+# Example:
+# Blues Shuffle in E.pdf | Play it slowly first - metronome at 70bpm
