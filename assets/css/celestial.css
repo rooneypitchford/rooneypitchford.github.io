@@ -381,9 +381,10 @@ body {
   border-radius: 10px;
   overflow: hidden;
   margin-bottom: 16px;
+  box-shadow: 0 1px 0 rgba(32,26,18,0.08), 0 8px 24px rgba(32,26,18,0.10);
 }
 
-.merch-illustration {
+.merch-image {
   display: block;
   width: 100%;
   max-width: 320px;
@@ -391,7 +392,7 @@ body {
   transition: transform 0.3s ease;
 }
 
-.merch-card:hover .merch-illustration { transform: scale(1.03); }
+.merch-card:hover .merch-image { transform: scale(1.03); }
 
 .merch-title {
   font-family: 'Fraunces', Georgia, serif;
