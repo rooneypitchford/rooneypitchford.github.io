@@ -378,18 +378,20 @@ body {
 .merch-card:hover { background: rgba(255,255,255,0.58); }
 
 .merch-image-wrap {
-  background: radial-gradient(circle at 50% 32%, #1c2038 0%, #0b0d17 70%);
   border-radius: 10px;
-  padding: 28px;
+  overflow: hidden;
   margin-bottom: 16px;
 }
 
-.merch-image {
+.merch-illustration {
   display: block;
   width: 100%;
   max-width: 320px;
   margin: 0 auto;
+  transition: transform 0.3s ease;
 }
+
+.merch-card:hover .merch-illustration { transform: scale(1.03); }
 
 .merch-title {
   font-family: 'Fraunces', Georgia, serif;
