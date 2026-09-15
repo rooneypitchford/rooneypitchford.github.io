@@ -378,6 +378,14 @@ body {
 
 .merch-card:hover { background: rgba(255,255,255,0.58); }
 
+.merch-image {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
 .merch-title {
   font-family: 'Fraunces', Georgia, serif;
   font-weight: 500;
