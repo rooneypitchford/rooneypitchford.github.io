@@ -6,6 +6,7 @@
   --gold-lt:   #eccb98;
   --ink:       #201a12;
   --ink-soft:  #55493a;
+  --ink-soft-strong: #3a3022;
   --cream:     #fbf7ee;
   --glass:     rgba(251, 247, 238, 0.72);
   --glass-brd: rgba(255, 255, 255, 0.55);
@@ -201,7 +202,7 @@ body {
 
 .release-row {
   display: grid;
-  grid-template-columns: 56px 52px 1fr auto;
+  grid-template-columns: 56px 1fr auto;
   align-items: center;
   gap: 22px;
   padding: 26px 0;
@@ -220,15 +221,6 @@ body {
   display: block;
 }
 
-.release-index {
-  font-family: 'Fraunces', Georgia, serif;
-  font-style: italic;
-  font-size: 1.05rem;
-  color: var(--gold);
-  align-self: start;
-  padding-top: 4px;
-}
-
 .release-title {
   font-family: 'Fraunces', Georgia, serif;
   font-weight: 500;
@@ -238,14 +230,12 @@ body {
   color: var(--ink);
 }
 
-.release-title em { font-style: italic; color: var(--gold); font-weight: 400; }
-
 .release-meta {
   font-family: 'DM Mono', monospace;
   font-size: 0.68rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--ink-soft);
+  color: var(--ink-soft-strong);
   margin-top: 6px;
 }
 
@@ -261,7 +251,7 @@ body {
   font-size: 0.64rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--ink-soft);
+  color: var(--ink-soft-strong);
   text-decoration: none;
   border-bottom: 1px solid rgba(32,26,18,0.28);
   padding-bottom: 2px;
