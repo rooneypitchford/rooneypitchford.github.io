@@ -201,8 +201,8 @@ body {
 
 .release-row {
   display: grid;
-  grid-template-columns: 52px 1fr auto;
-  align-items: baseline;
+  grid-template-columns: 56px 52px 1fr auto;
+  align-items: center;
   gap: 22px;
   padding: 26px 0;
   border-bottom: 1px solid rgba(32,26,18,0.10);
@@ -212,11 +212,20 @@ body {
 .release-row.static { cursor: default; }
 .release-row:last-child { border-bottom: none; }
 
+.release-cover {
+  width: 56px;
+  height: 56px;
+  border-radius: 6px;
+  object-fit: cover;
+  display: block;
+}
+
 .release-index {
   font-family: 'Fraunces', Georgia, serif;
   font-style: italic;
   font-size: 1.05rem;
   color: var(--gold);
+  align-self: start;
   padding-top: 4px;
 }
 
@@ -378,12 +387,18 @@ body {
 
 .merch-card:hover { background: rgba(255,255,255,0.58); }
 
+.merch-image-wrap {
+  background: radial-gradient(circle at 50% 32%, #1c2038 0%, #0b0d17 70%);
+  border-radius: 10px;
+  padding: 28px;
+  margin-bottom: 16px;
+}
+
 .merch-image {
   display: block;
   width: 100%;
   max-width: 320px;
-  border-radius: 8px;
-  margin-bottom: 16px;
+  margin: 0 auto;
 }
 
 .merch-title {
@@ -478,7 +493,8 @@ body {
 
 @media (max-width: 620px) {
   .panel { padding: 8px 24px 32px; border-radius: 14px; }
-  .release-row { grid-template-columns: 36px 1fr; }
+  .release-row { grid-template-columns: 44px 1fr; }
+  .release-cover { display: none; }
   .release-links { grid-column: 1 / -1; justify-self: start; margin-top: 4px; }
   .press-quote { padding: 28px 24px; }
 }
